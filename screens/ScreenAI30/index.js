@@ -79,7 +79,9 @@ const App = () => {
 
       <Text style={styles.text}>Price per hour: $20.00</Text>
       <Text style={styles.text}>Total price: $0.00</Text>
-    </ScrollView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI26");
+    }}><Text style={styles.zQptemXv}>{"Map"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -119,6 +121,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     margin: 10
+  },
+  zQptemXv: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default App;
