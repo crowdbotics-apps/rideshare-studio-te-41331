@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 
 const PaymentScreen = () => {
+  const navigation = useNavigation();
   const [selectedPayment, setSelectedPayment] = useState(null);
   const paymentOptions = [{
     id: 'creditCard',
@@ -41,10 +43,12 @@ const PaymentScreen = () => {
     }} style={styles.icon} />}
     </TouchableOpacity>;
 
-  return <View style={styles.container}>
+  return <Pressable onPress={() => {
+    navigation.navigate("ScreenAI27");
+  }}><View style={styles.container}>
       <Text style={styles.amountText}>Amount to be paid: $100</Text>
       <FlatList data={paymentOptions} renderItem={renderItem} keyExtractor={item => item.id} />
-    </View>;
+    </View></Pressable>;
 };
 
 const styles = StyleSheet.create({
