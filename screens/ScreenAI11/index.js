@@ -56,7 +56,9 @@ const Dashboard = () => {
           <Image style={styles.navItemImage} source={{
           uri: 'https://tinyurl.com/42evm3m3'
         }} />
-          <Text style={styles.navItemText}>Settings</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI12");
+        }}><Text style={styles.navItemText}>Settings</Text></Pressable>
         </TouchableOpacity>
       </View>
     </SafeAreaView>;
