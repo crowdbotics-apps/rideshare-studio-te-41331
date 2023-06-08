@@ -48,7 +48,9 @@ const ProfileScreen = () => {
         navigation.navigate("ScreenAI17");
       }}><Text style={styles.buttonText}>Log Out</Text></Pressable>
       </TouchableOpacity>
-    </ScrollView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI18");
+    }}><Text style={styles.xtwsoxem}>{"Delete"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -81,6 +83,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#FFFFFF',
     textAlign: 'center'
+  },
+  xtwsoxem: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default ProfileScreen;
