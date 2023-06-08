@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const CreditCardScreen = () => {
+  const navigation = useNavigation();
   const [cardNumber, setCardNumber] = useState('');
   const [cvv, setCvv] = useState('');
   const [cardHolderName, setCardHolderName] = useState('');
@@ -14,7 +17,9 @@ const CreditCardScreen = () => {
       <TextInput style={styles.input} placeholder="Cardholder's Name" value={cardHolderName} onChangeText={setCardHolderName} />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Create</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI23");
+        }}><Text style={styles.buttonText}>Create</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Edit</Text>
