@@ -50,7 +50,9 @@ const ProfileScreen = () => {
       </TouchableOpacity>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI18");
-    }}><Text style={styles.xtwsoxem}>{"Delete"}</Text></Pressable></ScrollView>;
+    }}><Text style={styles.xtwsoxem}>{"Delete"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI19");
+    }}><Text style={styles.FUfKiUQU}>{"Notification"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -85,6 +87,13 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   xtwsoxem: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  FUfKiUQU: {
     width: 100,
     height: 50,
     lineHeight: 14,
