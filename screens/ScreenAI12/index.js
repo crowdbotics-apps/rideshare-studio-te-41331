@@ -39,7 +39,9 @@ const ProfileScreen = () => {
       }}><Text style={styles.buttonText}>Support / Send Feedback</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Delete Account</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI16");
+      }}><Text style={styles.buttonText}>{"Invite Friends"}</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Log Out</Text>
