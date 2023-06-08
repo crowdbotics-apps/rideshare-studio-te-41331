@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 
@@ -29,7 +30,7 @@ const PaymentScreen = () => {
   const renderItem = ({
     item
   }) => <TouchableOpacity style={[styles.card, selectedPayment === item.id ? styles.selectedCard : null]} onPress={() => setSelectedPayment(item.id)}>
-      <Text style={styles.cardText}>{item.name}</Text>
+      <Pressable><Text style={styles.cardText}>{item.name}</Text></Pressable>
       {item.id === 'creditCard' && <FlatList data={creditCards} renderItem={({
       item
     }) => <Text style={styles.creditCardText}>
