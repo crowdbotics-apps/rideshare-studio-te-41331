@@ -38,7 +38,9 @@ const Dashboard = () => {
             <Text style={styles.menuItemText}>Menu 4</Text>
           </TouchableOpacity>
         </View>
-      <Pressable><Text style={styles.GnpQihSd}>{"M"}</Text></Pressable></ScrollView>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI22");
+      }}><Text style={styles.GnpQihSd}>{"Report Flag user"}</Text></Pressable></ScrollView>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navItemImage} source={{
