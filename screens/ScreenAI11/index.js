@@ -23,9 +23,7 @@ const Dashboard = () => {
             <Image style={styles.menuItemImage} source={{
             uri: 'https://tinyurl.com/42evm3m3'
           }} />
-            <Pressable onPress={() => {
-            navigation.navigate("ScreenAI20");
-          }}><Text style={styles.menuItemText}>{"Messages"}</Text></Pressable>
+            <Text style={styles.menuItemText}>{"Messages"}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <Image style={styles.menuItemImage} source={{
