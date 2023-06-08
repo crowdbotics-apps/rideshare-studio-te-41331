@@ -23,7 +23,7 @@ const Dashboard = () => {
             <Image style={styles.menuItemImage} source={{
             uri: 'https://tinyurl.com/42evm3m3'
           }} />
-            <Text style={styles.menuItemText}>{"Messages"}</Text>
+            <Pressable><Text style={styles.menuItemText}>{"Messages"}</Text></Pressable>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <Image style={styles.menuItemImage} source={{
@@ -38,7 +38,7 @@ const Dashboard = () => {
             <Text style={styles.menuItemText}>Menu 4</Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
+      <Pressable><Text style={styles.GnpQihSd}>{"M"}</Text></Pressable></ScrollView>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navItemImage} source={{
@@ -120,6 +120,13 @@ const styles = StyleSheet.create({
   navItemText: {
     color: '#FFFFFF',
     fontSize: 12
+  },
+  GnpQihSd: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default Dashboard;
