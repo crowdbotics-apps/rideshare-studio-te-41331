@@ -44,7 +44,9 @@ const ProfileScreen = () => {
       }}><Text style={styles.buttonText}>{"Invite Friends"}</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Log Out</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI17");
+      }}><Text style={styles.buttonText}>Log Out</Text></Pressable>
       </TouchableOpacity>
     </ScrollView>;
 };
