@@ -70,7 +70,9 @@ const App = () => {
       </View>
 
       <TouchableOpacity>
-        <Text style={styles.buttonText}>Calendar</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI24");
+      }}><Text style={styles.buttonText}>Calendar</Text></Pressable>
       </TouchableOpacity>
 
       <TextInput style={styles.input} placeholder="Number of Horses" value={numHorses} onChangeText={setNumHorses} />
