@@ -81,7 +81,9 @@ const App = () => {
       <Text style={styles.text}>Total price: $0.00</Text>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI26");
-    }}><Text style={styles.zQptemXv}>{"Map"}</Text></Pressable></ScrollView>;
+    }}><Text style={styles.zQptemXv}>{"Map"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI28");
+    }}><Text style={styles.iHEqFBbY}>{"Payment"}</Text></Pressable></ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -123,6 +125,13 @@ const styles = StyleSheet.create({
     margin: 10
   },
   zQptemXv: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  iHEqFBbY: {
     width: 100,
     height: 50,
     lineHeight: 14,
