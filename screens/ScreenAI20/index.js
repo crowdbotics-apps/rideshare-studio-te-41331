@@ -1,5 +1,3 @@
-import { useNavigation } from "@react-navigation/native";
-import { Pressable } from "react-native";
 import React from "react";
 import { View, Text, Image, TextInput, FlatList, StyleSheet } from "react-native";
 const conversations = [{
@@ -20,7 +18,6 @@ const conversations = [{
 }];
 
 const MessageScreen = () => {
-  const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
         <Image style={styles.profilePicture} source={{
@@ -39,9 +36,7 @@ const MessageScreen = () => {
               {item.lastMessageTimestamp}
             </Text>
           </View>} keyExtractor={item => item.id} />
-    <Pressable onPress={() => {
-      navigation.navigate("ScreenAI21");
-    }}><Text style={styles.WifuaIBL}>{"Direct Message"}</Text></Pressable></View>;
+    <Text style={styles.WifuaIBL}>{"Direct Message"}</Text></View>;
 };
 
 const styles = StyleSheet.create({
