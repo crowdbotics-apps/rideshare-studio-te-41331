@@ -29,7 +29,9 @@ const Dashboard = () => {
             <Image style={styles.menuItemImage} source={{
             uri: 'https://tinyurl.com/42evm3m3'
           }} />
-            <Text style={styles.menuItemText}>Menu 3</Text>
+            <Pressable onPress={() => {
+            navigation.navigate("ScreenAI22");
+          }}><Text style={styles.menuItemText}>{"Report Flag User"}</Text></Pressable>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <Image style={styles.menuItemImage} source={{
@@ -38,9 +40,7 @@ const Dashboard = () => {
             <Text style={styles.menuItemText}>Menu 4</Text>
           </TouchableOpacity>
         </View>
-      <Pressable onPress={() => {
-        navigation.navigate("ScreenAI22");
-      }}><Text style={styles.GnpQihSd}>{"Report Flag user"}</Text></Pressable></ScrollView>
+      <Text style={styles.GnpQihSd}>{"m"}</Text><Text style={styles.aBFthQWz}>Lorem ipsum…</Text></ScrollView>
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem}>
           <Image style={styles.navItemImage} source={{
@@ -124,6 +124,13 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   GnpQihSd: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  aBFthQWz: {
     width: 100,
     height: 50,
     lineHeight: 14,
