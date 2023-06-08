@@ -5,36 +5,36 @@ import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'reac
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-  return <Pressable onPress={() => {
-    navigation.navigate("ScreenAI9");
-  }}><View style={styles.container}>
+  return <View style={styles.container}>
       <Text style={styles.title}>Welcome</Text>
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
       <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Log In</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI11");
+      }}><Text style={styles.loginButtonText}>Log In</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity>
         <Pressable onPress={() => {
-          navigation.navigate("ScreenAI8");
-        }}><Text style={styles.forgotPassword}>Forgot Password?</Text></Pressable>
+        navigation.navigate("ScreenAI8");
+      }}><Text style={styles.forgotPassword}>Forgot Password?</Text></Pressable>
       </TouchableOpacity>
       <Text style={styles.orText}>OR</Text>
       <View style={styles.socialContainer}>
         <TouchableOpacity style={styles.socialButton}>
           <Image style={styles.socialIcon} source={{
-            uri: 'https://tinyurl.com/42evm3m3'
-          }} />
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} />
           <Text style={styles.socialText}>Connect with Facebook</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialButton}>
           <Image style={styles.socialIcon} source={{
-            uri: 'https://tinyurl.com/42evm3m3'
-          }} />
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} />
           <Text style={styles.socialText}>Connect with Google</Text>
         </TouchableOpacity>
       </View>
-    </View></Pressable>;
+    </View>;
 };
 
 const styles = StyleSheet.create({
