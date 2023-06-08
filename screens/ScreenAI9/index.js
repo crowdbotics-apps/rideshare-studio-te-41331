@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const UserProfileScreen = () => {
+  const navigation = useNavigation();
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
 
@@ -17,7 +20,9 @@ const UserProfileScreen = () => {
       <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI10");
+    }}><Text style={styles.kPqtZtDE}>{"Upload Profile Picture"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -52,6 +57,13 @@ const styles = StyleSheet.create({
   nextButtonText: {
     color: 'white',
     fontWeight: 'bold'
+  },
+  kPqtZtDE: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default UserProfileScreen;
