@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Image, StyleSheet } from 'react-native';
 
 const App = () => {
+  const navigation = useNavigation();
   const [pickupAddress, setPickupAddress] = useState('');
   const [dropOffAddress, setDropOffAddress] = useState('');
   const [search, setSearch] = useState('');
@@ -22,7 +25,9 @@ const App = () => {
           <Text style={styles.buttonText}>Notification Icon</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text style={styles.buttonText}>Ride's History</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI31");
+        }}><Text style={styles.buttonText}>Ride's History</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text style={styles.buttonText}>Request a Ride</Text>
