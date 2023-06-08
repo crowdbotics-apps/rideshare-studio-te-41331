@@ -23,7 +23,7 @@ const Dashboard = () => {
             <Image style={styles.menuItemImage} source={{
             uri: 'https://tinyurl.com/42evm3m3'
           }} />
-            <Text style={styles.menuItemText}>{"Messages"}</Text>
+            <Pressable><Text style={styles.menuItemText}>{"Messages"}</Text></Pressable>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <Image style={styles.menuItemImage} source={{
