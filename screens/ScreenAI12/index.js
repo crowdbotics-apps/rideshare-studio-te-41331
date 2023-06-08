@@ -19,10 +19,14 @@ const ProfileScreen = () => {
       }}><Text style={styles.buttonText}>{"Frequently Asked Questions"}</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Privacy Policy</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI7");
+      }}><Text style={styles.buttonText}>Privacy Policy</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Terms and Conditions</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI6");
+      }}><Text style={styles.buttonText}>Terms and Conditions</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Pressable onPress={() => {
