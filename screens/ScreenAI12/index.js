@@ -28,7 +28,9 @@ const ProfileScreen = () => {
       }}><Text style={styles.buttonText}>Change Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Support / Send Feedback</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI14");
+      }}><Text style={styles.buttonText}>Support / Send Feedback</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Delete Account</Text>
