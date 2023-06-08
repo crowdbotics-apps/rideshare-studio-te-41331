@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, TextInput, StyleSheet, Image, ScrollView } from 'react-native';
 
 const ReportScreen = () => {
+  const navigation = useNavigation();
   const [selectedReason, setSelectedReason] = useState(null);
   const [otherReason, setOtherReason] = useState('');
   const reasons = ['Spam', 'Pornography', 'Hatred and bullying', 'Self-harm', 'Violent, gory and harmful content', 'Child porn', 'Illegal activities (e.g. drug uses)', 'Deceptive content', 'Copyright and trademark infringement'];
@@ -26,7 +29,9 @@ const ReportScreen = () => {
         </TouchableOpacity>)}
       <TextInput style={styles.otherReasonInput} onChangeText={handleOtherReasonChange} value={otherReason} placeholder="Other (input)" />
       <TouchableOpacity style={styles.submitButton}>
-        <Text style={styles.submitButtonText}>Submit</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI23");
+      }}><Text style={styles.submitButtonText}>Submit</Text></Pressable>
       </TouchableOpacity>
     </ScrollView>;
 };
