@@ -37,9 +37,7 @@ const Dashboard = () => {
             <Image style={styles.menuItemImage} source={{
             uri: 'https://tinyurl.com/42evm3m3'
           }} />
-            <Pressable onPress={() => {
-            navigation.navigate("ScreenAI24");
-          }}><Text style={styles.menuItemText}>{"Calendar"}</Text></Pressable>
+            <Text style={styles.menuItemText}>{"Calendar"}</Text>
           </TouchableOpacity>
         </View>
       <Text style={styles.GnpQihSd}>{"m"}</Text><Text style={styles.aBFthQWz}>Lorem ipsum…</Text></ScrollView>
