@@ -14,7 +14,9 @@ const ProfileScreen = () => {
         <Text style={styles.buttonText}>Edit Profile</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Edit Payment</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI15");
+      }}><Text style={styles.buttonText}>{"Frequently Asked Questions"}</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Privacy Policy</Text>
