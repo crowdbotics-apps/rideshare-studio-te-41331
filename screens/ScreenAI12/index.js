@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return <ScrollView contentContainerStyle={styles.container}>
       <Image style={styles.profileImage} source={{
       uri: 'https://tinyurl.com/42evm3m3'
@@ -20,7 +23,9 @@ const ProfileScreen = () => {
         <Text style={styles.buttonText}>Terms and Conditions</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Change Password</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI13");
+      }}><Text style={styles.buttonText}>Change Password</Text></Pressable>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Support / Send Feedback</Text>
