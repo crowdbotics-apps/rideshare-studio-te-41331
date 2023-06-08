@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native';
 
 const NotificationList = () => {
+  const navigation = useNavigation();
   const [notifications, setNotifications] = useState([{
     id: '1',
     title: 'Notification 1',
@@ -43,7 +46,11 @@ const NotificationList = () => {
   return <View style={styles.container}>
       <Text style={styles.title}>List of all notifications</Text>
       <FlatList data={notifications} renderItem={renderItem} keyExtractor={item => item.id} />
-    </View>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI29");
+    }}><Text style={styles.jHITjVhb}>{"Push Notification"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI20");
+    }}><Text style={styles.LWbRMJoY}>{"Notification Settings"}</Text></Pressable></View>;
 };
 
 const styles = StyleSheet.create({
@@ -97,6 +104,20 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
     color: '#FFFFFF'
+  },
+  jHITjVhb: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  LWbRMJoY: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default NotificationList;
