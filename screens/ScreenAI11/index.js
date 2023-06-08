@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 const Dashboard = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Dashboard</Text>
@@ -42,9 +45,11 @@ const Dashboard = () => {
           <Text style={styles.navItemText}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
-          <Image style={styles.navItemImage} source={{
-          uri: 'https://tinyurl.com/42evm3m3'
-        }} />
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI9");
+        }}><Image style={styles.navItemImage} source={{
+            uri: 'https://tinyurl.com/42evm3m3'
+          }} /></Pressable>
           <Text style={styles.navItemText}>Profile</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
