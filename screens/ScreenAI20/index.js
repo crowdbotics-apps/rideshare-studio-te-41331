@@ -1,91 +1,97 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Switch, StyleSheet, Image } from 'react-native';
+import React from 'react';
+import { View, Text, Image, TextInput, FlatList, StyleSheet } from 'react-native';
+const conversations = [{
+  id: '1',
+  name: 'John Doe',
+  username: '@johndoe',
+  lastMessageTimestamp: '2m'
+}, {
+  id: '2',
+  name: 'Jane Smith',
+  username: '@janesmith',
+  lastMessageTimestamp: '5m'
+}, {
+  id: '3',
+  name: 'Michael Brown',
+  username: '@michaelbrown',
+  lastMessageTimestamp: '10m'
+}];
 
-const NotificationSettings = () => {
-  const [inAppNotifications, setInAppNotifications] = useState(false);
-  const [pushNotifications, setPushNotifications] = useState(false);
-  const [emailNotifications, setEmailNotifications] = useState(false);
-  const [notificationFrequency, setNotificationFrequency] = useState('daily');
+const MessageScreen = () => {
   return <View style={styles.container}>
-      <TouchableOpacity onPress={() => {}} style={styles.backButton}>
-        <Image source={{
+      <View style={styles.header}>
+        <Image style={styles.profilePicture} source={{
         uri: 'https://tinyurl.com/42evm3m3'
-      }} style={styles.backIcon} />
-      </TouchableOpacity>
-      <Text style={styles.title}>Notification Settings</Text>
-      <View style={styles.settingRow}>
-        <Text style={styles.settingText}>In-app Notifications</Text>
-        <Switch value={inAppNotifications} onValueChange={setInAppNotifications} />
+      }} />
+        <Text style={styles.name}>John Doe</Text>
+        <Text style={styles.username}>@johndoe</Text>
       </View>
-      <View style={styles.settingRow}>
-        <Text style={styles.settingText}>Push Notifications</Text>
-        <Switch value={pushNotifications} onValueChange={setPushNotifications} />
-      </View>
-      <View style={styles.settingRow}>
-        <Text style={styles.settingText}>Email Notifications</Text>
-        <Switch value={emailNotifications} onValueChange={setEmailNotifications} />
-      </View>
-      <Text style={styles.frequencyText}>Set Notifications frequency</Text>
-      <View style={styles.frequencyRow}>
-        <TouchableOpacity style={[styles.frequencyButton, notificationFrequency === 'daily' && styles.activeFrequency]} onPress={() => setNotificationFrequency('daily')}>
-          <Text style={styles.frequencyText}>Daily</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.frequencyButton, notificationFrequency === 'weekly' && styles.activeFrequency]} onPress={() => setNotificationFrequency('weekly')}>
-          <Text style={styles.frequencyText}>Weekly</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.frequencyButton, notificationFrequency === 'monthly' && styles.activeFrequency]} onPress={() => setNotificationFrequency('monthly')}>
-          <Text style={styles.frequencyText}>Monthly</Text>
-        </TouchableOpacity>
-      </View>
+      <TextInput style={styles.searchBar} placeholder="Search" placeholderTextColor="#999" />
+      <FlatList data={conversations} renderItem={({
+      item
+    }) => <View style={styles.conversation}>
+            <Text style={styles.conversationName}>{item.name}</Text>
+            <Text style={styles.conversationUsername}>{item.username}</Text>
+            <Text style={styles.conversationTimestamp}>
+              {item.lastMessageTimestamp}
+            </Text>
+          </View>} keyExtractor={item => item.id} />
     </View>;
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
-    paddingHorizontal: 20
+    backgroundColor: '#fff'
   },
-  backButton: {
-    marginTop: 40,
-    marginBottom: 20
-  },
-  backIcon: {
-    width: 30,
-    height: 30
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 30
-  },
-  settingRow: {
+  header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20
+    padding: 16
   },
-  settingText: {
-    fontSize: 18
+  profilePicture: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 16
   },
-  frequencyText: {
+  name: {
     fontSize: 18,
-    marginBottom: 10
+    fontWeight: 'bold'
   },
-  frequencyRow: {
+  username: {
+    fontSize: 14,
+    color: '#999',
+    marginLeft: 8
+  },
+  searchBar: {
+    backgroundColor: '#f0f0f0',
+    borderRadius: 25,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginHorizontal: 16,
+    marginBottom: 16
+  },
+  conversation: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  frequencyButton: {
-    backgroundColor: '#E0E0E0',
-    borderRadius: 10,
-    padding: 10,
-    flex: 1,
     alignItems: 'center',
-    marginHorizontal: 5
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0'
   },
-  activeFrequency: {
-    backgroundColor: '#6200EE'
+  conversationName: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  conversationUsername: {
+    fontSize: 14,
+    color: '#999'
+  },
+  conversationTimestamp: {
+    fontSize: 12,
+    color: '#999'
   }
 });
-export default NotificationSettings;
+export default MessageScreen;
